@@ -1,4 +1,4 @@
-# Article Component
+# Landing Page Huddle
 
 ## ✍🏻 Descripción
 
