@@ -80,14 +80,25 @@ header img {
     padding: 0.8em 5em;
     border-radius: 20px;
     color: #674baf;
+    box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.button:hover {
+    background: rgb(212, 155, 226);
+    color: #fff;
+}
+
+.button:focus {
+    outline: none;
 }
 
 .social-media {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5em;
-    padding-bottom: 3em;
+    padding-top: 3em;
+    padding-bottom: 1.5em;
 }
 
 .social-media a {
@@ -107,7 +118,40 @@ header img {
     height: 18px;
 }
 
+.attribution {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1em;
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: #00252e;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .attribution {
+        padding: 2em 0;
+    }
+}
+
 @media only screen and (min-width: 991px) {
+    body {
+        background-image: url(./images/bg-desktop.svg);
+        background-size: cover;
+        background-position: left center;
+    }
+
     header {
         width: 100%;
         padding: 3em 0em 1.5em 0em;
@@ -144,15 +188,15 @@ header img {
     .ilustration img {
         width: 500px;
     }
-}
 
-@media only screen and (min-width: 991px) {
     .container {
         width: 1250px;
     }
 
     .social-media {
         justify-content: flex-end;
+        padding-top: 5em;
+        padding-bottom: 3em;
     }
 }
 
@@ -174,6 +218,12 @@ header img {
 @media only screen and (min-width: 1200px) {
     .container {
         width: 1400px;
+    }
+
+    .button {
+        padding: 0.9em 5em;
+        font-size: 16px;
+        border-radius: 30px;
     }
 
     .ilustration img {
