@@ -11,7 +11,7 @@ Solo debes clonarlo abrir el index.html y listo 😊
 
 ## 🎨 Demo
 
-Puedes ver el demo aquí → [Article Component](https://cjosue15.github.io/landing-page-huddle/)
+Puedes ver el demo aquí → [Landing Page Huddle](https://cjosue15.github.io/landing-page-huddle/)
 
 <details>
 
