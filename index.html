@@ -16,13 +16,21 @@
     <body>
         <header>
             <div class="container">
-                <img src="./images/logo.svg" alt="Huddle" />
+                <div class="header-content">
+                    <img src="./images/logo.svg" alt="Huddle" />
+                    <div class="dark-mode">
+                        <label class="dark-mode-title" for="checkbox">Dark Mode</label>
+                        <input type="checkbox" class="checkbox" id="checkbox" />
+                        <label class="switch" for="checkbox"> </label>
+                    </div>
+                </div>
             </div>
         </header>
         <div id="main" class="container">
             <div class="content-ilustration">
                 <div class="ilustration">
-                    <img src="./images/illustration.svg" alt="" />
+                    <img id="ligth" class="sol" src="./images/illustration.svg" alt="Illustration" />
+                    <img id="dark" class="noche" src="./images/illustration-dark.svg" alt="Illustration" />
                 </div>
                 <div class="content">
                     <h1>Build The Community Your Fans Will Love</h1>
@@ -48,5 +56,6 @@
                 </p>
             </footer>
         </div>
+        <script src="./index.js"></script>
     </body>
 </html>

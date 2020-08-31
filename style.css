@@ -13,11 +13,19 @@ html {
     padding: 0;
 }
 
+:root {
+    --white: #fff;
+    --baseBackground: #674baf;
+    --switchSpiner: #b964c4;
+    --switch: #fff;
+    --color-footer: #00252e;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     min-height: 100vh;
-    background-color: #674baf;
+    background-color: var(--baseBackground);
     background-image: url(./images/bg-mobile.svg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -34,6 +42,11 @@ header {
 
 header img {
     width: 120px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
 }
 
 .container {
@@ -63,11 +76,11 @@ header img {
     font-weight: 600;
     font-size: 23px;
     line-height: 30px;
-    color: #fff;
+    color: var(--white);
 }
 
 .content p {
-    color: #fff;
+    color: var(--white);
     font-size: 14px;
     line-height: 25px;
     padding: 0 1.5em;
@@ -76,17 +89,17 @@ header img {
 
 .button {
     border: none;
-    background: #fff;
+    background: var(--white);
     padding: 0.8em 5em;
     border-radius: 20px;
-    color: #674baf;
+    color: var(--baseBackground);
     box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.2);
     transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 .button:hover {
     background: rgb(212, 155, 226);
-    color: #fff;
+    color: var(--white);
 }
 
 .button:focus {
@@ -106,7 +119,7 @@ header img {
     height: 35px;
     margin: 0 0.3em;
     display: inline-block;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -124,13 +137,17 @@ header img {
     padding-bottom: 1em;
     margin: 0;
     font-size: 16px;
-    color: #fff;
+    color: var(--white);
 }
 
 .attribution a {
     text-decoration: none;
-    color: #00252e;
+    color: var(--color-footer);
     font-weight: 700;
+}
+
+.dark-mode-title {
+    display: none;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 991px) {
@@ -142,6 +159,10 @@ header img {
 @media only screen and (min-width: 600px) {
     .attribution {
         padding: 2em 0;
+    }
+
+    .dark-mode-title {
+        display: block;
     }
 }
 
@@ -220,6 +241,10 @@ header img {
         width: 1400px;
     }
 
+    header img {
+        width: 250px;
+    }
+
     .button {
         padding: 0.9em 5em;
         font-size: 16px;
@@ -268,4 +293,78 @@ header img {
         right: 0;
         bottom: 0;
     }
+}
+
+.dark-mode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dark-mode-title {
+    margin-right: 1em;
+    color: var(--white);
+}
+
+.checkbox {
+    display: none;
+}
+
+.switch {
+    height: 36px;
+    width: 86px;
+    display: block;
+    border-radius: 20px;
+    background: var(--switch);
+    padding: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.switch::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: var(--switchSpiner);
+    border-radius: 50%;
+    transform: translateX(50px);
+    transition: 0.3s;
+    will-change: transform;
+}
+
+.checkbox:checked + .switch::before {
+    transform: translateX(0px);
+}
+
+.is-dark-mode {
+    --baseBackground: #08052b;
+    --white: #e0ddff;
+    --switchSpiner: #282943;
+    --switch: linear-gradient(to right, #f252c8 0%, #b752ed 100%);
+    --color-footer: #f252c8;
+}
+
+.dark-mode-img {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.sol {
+    display: block;
+}
+
+.noche {
+    display: none;
+}
+
+.sol.luna {
+    display: none;
+}
+
+.noche.dia {
+    display: block;
 }
